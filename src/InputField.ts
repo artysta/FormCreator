@@ -1,23 +1,21 @@
-import { Field } from "./src/Field";
+import { Field } from "./Field";
 import { FieldType } from "./FieldType";
+import { LabelField } from "./LabelField";
 
 export class InputField implements Field {
     name: string;
     type: FieldType;
     value: any;
-    lblElement: HTMLLabelElement;
+    lblElement: LabelField;
     lblValue: string;
     inputElement: HTMLInputElement;
     
-    constructor(name: string, type: FieldType, lblValue: string){
+    constructor(name: string, lblValue: string){
         this.name = name;
-        this.type = type;
+        this.type = FieldType.Text;
         this.inputElement = <HTMLInputElement> document.createElement('input');
         this.inputElement.name = this.name;
-        this.lblElement = <HTMLLabelElement> document.createElement('label');
-        this.lblElement.innerHTML = lblValue;
-        this.lblElement.htmlFor = name;
-        this.lblValue = lblValue;
+        this.lblElement = new LabelField("label", lblValue);
     }
     
     render(): HTMLElement {
