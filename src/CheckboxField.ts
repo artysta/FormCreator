@@ -14,6 +14,7 @@ export class CheckboxField implements Field {
         this.name = name;
         this.type = FieldType.Checkbox;
         this.checkboxElement = <HTMLInputElement> document.createElement('input');
+        this.checkboxElement.type = "checkbox";
         this.checkboxElement.name = this.name;
         this.lblElement = new LabelField("label", lblValue);
     }
