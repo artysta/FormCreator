@@ -12,7 +12,7 @@ export class TextAreaField implements Field {
     
     constructor(name: string, lblValue: string){
         this.name = name;
-        this.type = FieldType.Text;
+        this.type = FieldType.Multiline;
         this.textAreaElement = <HTMLTextAreaElement> document.createElement('textarea');
         this.textAreaElement.name = this.name;
         this.lblElement = new LabelField("label", lblValue);

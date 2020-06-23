@@ -12,7 +12,7 @@ export class SelectField implements Field {
     
     constructor(name: string, lblValue: string,  ...options: string[]){
         this.name = name;
-        this.type = FieldType.Text;
+        this.type = FieldType.Select;
         this.selectElement = <HTMLSelectElement> document.createElement('select');
         this.selectElement.name = this.name;
 
