@@ -11,6 +11,7 @@ export class LabelField {
         this.type = FieldType.Text;
         this.lblElement = <HTMLLabelElement> document.createElement('label');
         this.lblElement.innerHTML = lblValue;
+        this.value = lblValue;
         this.lblElement.htmlFor = name;
     }
     
