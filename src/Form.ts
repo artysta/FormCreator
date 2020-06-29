@@ -20,8 +20,14 @@ export class Form {
         });
     }
 
-    getValue(): void {
-        // TODO
+    getValues(): any {
+        let array: any[] = new Array();
+        
+        this.fields.forEach(element => {
+            array.push(element.lblElement.getValue() + ": " + element.getValue());
+        });
+
+        return array;
     }
 
 }
