@@ -20,14 +20,14 @@ export class LocStorage implements DataStorage {
     }
 
     /**
-     * @returns  List that consists all document IDs from local storage.
+     * @returns  List that consists of all document IDs from local storage.
      */
     getDocuments(): string[] {
-        let documentIDs: string[];
+        let documentIDs: string[] = new Array();
 
         for (let i = 0; i < localStorage.length; i++)
             documentIDs.push(localStorage.key(i));
 
         return documentIDs;
     }
-}
+}   
