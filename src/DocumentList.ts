@@ -25,12 +25,25 @@ export class DocumentList {
     }
 
     /**
+     * @param documentID  ID of document that should be removed using LocStorage class.
+     */
+    removeDocument(documentID: string): void {
+        let storage: LocStorage = new LocStorage();
+        storage.removeDocument(documentID);
+
+        // Reload page after removing form.
+        window.location.reload();
+    }
+
+    /**
      * @returns  Table (HTMLElement) that contains all documents.
      */
     render(): HTMLElement {
         let table = document.createElement("table");
 
+        // Iterate through all documents.
         this.documents.forEach(currentDoc => {
+            // Iterate through JSON (single document) data.
             for (let key in currentDoc) {
                 console.log(key + " " + currentDoc[key]);
 
@@ -45,9 +58,35 @@ export class DocumentList {
                 tr.appendChild(tdValue);
                 table.appendChild(tr);
             }
-        });
 
-        
+            // Add label and button so document can be edited 
+            let tr = document.createElement("tr");
+            let tdEdit = document.createElement("td");
+            let btnEdit = document.createElement("button");
+
+            btnEdit.innerHTML = ("Edit this document");
+
+            btnEdit.addEventListener("click", event => {
+                window.location.href = "edit-document.html?id=" + currentDoc["Document ID:"];
+            });
+
+            tdEdit.appendChild(btnEdit);
+            tr.appendChild(tdEdit);
+
+            // Add label and button so document can be removed. 
+            let tdRemove = document.createElement("td");
+            let btnRemove = document.createElement("button");
+
+            btnRemove.innerHTML = ("Remove this document");
+
+            btnRemove.addEventListener("click", event => {
+                this.removeDocument(currentDoc["Document ID:"]);
+            });
+
+            tdRemove.appendChild(btnRemove);
+            tr.appendChild(tdRemove);
+            table.appendChild(tr);
+        });
 
         return table;
     }
