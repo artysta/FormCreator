@@ -21,13 +21,14 @@ export class Form {
     }
 
     getValues(): any {
-        let array: any[] = new Array();
-        
+        let json: any = {};
+
+        // Add key-values to JSON object.
         this.fields.forEach(element => {
-            array.push(element.lblElement.getValue() + ": " + element.getValue());
+            json[element.lblElement.getValue()] = element.getValue();
         });
 
-        return array;
+        return json;
     }
 
 }
