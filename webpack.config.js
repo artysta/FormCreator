@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     App: "./src/App.ts",
     NewDocument: "./src/NewDocument.ts",
-    ListOfDocuments: "./src/ListOfDocuments.ts"
+    ListOfDocuments: "./src/ListOfDocuments.ts",
+    EditDocument: "./src/EditDocument.ts"
   },
   output: {
     filename: "[name].js",
