@@ -12,11 +12,18 @@ export class LocStorage implements DataStorage {
     }
 
     /**
-     * @param documentId  ID of document that should be loaded.
+     * @param documentID  ID of document that should be loaded from local storage.
      * @returns  JSON that consists of 
      */
-    loadDocument(documentId: string): object {
-        return JSON.parse(localStorage.getItem(documentId));
+    loadDocument(documentID: string): object {
+        return JSON.parse(localStorage.getItem(documentID));
+    }
+
+    /**
+     * @param documentID  ID of document that should be removed from local storage.
+     */
+    removeDocument(documentID: string): void {
+        localStorage.removeItem(documentID);
     }
 
     /**
