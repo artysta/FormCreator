@@ -31,6 +31,7 @@ export class Form {
         this.fields.forEach(element => {
             this.formContainer.appendChild(element.lblElement.render());
             this.formContainer.appendChild(element.render());
+            this.formContainer.appendChild(document.createElement("br"));
         });
 
         let btnSave = document.createElement("button");
