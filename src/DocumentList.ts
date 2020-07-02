@@ -36,6 +36,17 @@ export class DocumentList {
     }
 
     /**
+     * @param documentID  ID of document that should be returned.
+     * @returns  Document (JSON)
+     */
+    getDocument(documentID: string): object {
+        let storage: LocStorage = new LocStorage();
+        let document = storage.loadDocument(documentID);
+
+        return document;
+    }
+
+    /**
      * @returns  Table (HTMLElement) that contains all documents.
      */
     render(): HTMLElement {
