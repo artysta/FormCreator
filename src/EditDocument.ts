@@ -1,9 +1,8 @@
+import './styles/styles.scss';
 import { Router } from "./Router";
 import { DocumentList } from "./DocumentList";
 
 let documentID: string = Router.getParam("id");
-
-console.log(documentID);
 
 let header = document.getElementById("header");
 
@@ -11,9 +10,6 @@ header.innerHTML = "You are editing a document with ID: " + documentID;
 
 let list: DocumentList = new DocumentList();
 let documentToEdit: any = list.getDocument(documentID);
-console.log(documentToEdit);
-
-
 let table = document.createElement("table");
 
 for (let key in documentToEdit) {

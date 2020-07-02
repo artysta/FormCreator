@@ -1,3 +1,4 @@
+import './styles/styles.scss';
 import { DocumentList } from "./DocumentList";
 
 let documentList: DocumentList = new DocumentList();
