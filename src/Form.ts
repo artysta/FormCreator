@@ -28,10 +28,18 @@ export class Form {
     }
 
     render(): void {
+        let table = document.createElement("table");
+        // Table row for every label-element.
         this.fields.forEach(element => {
-            this.formContainer.appendChild(element.lblElement.render());
-            this.formContainer.appendChild(element.render());
-            this.formContainer.appendChild(document.createElement("br"));
+            let tr = document.createElement("tr");
+            let tdLbl = document.createElement("td");
+            let tdElement = document.createElement("td");
+
+            tdLbl.appendChild(element.lblElement.render());
+            tdElement.appendChild(element.render());
+            tr.appendChild(tdLbl);
+            tr.appendChild(tdElement);
+            table.appendChild(tr);
         });
 
         let btnSave = document.createElement("button");
@@ -47,8 +55,20 @@ export class Form {
             window.location.href = "index.html";
         });
 
-        this.formContainer.appendChild(btnSave);
-        this.formContainer.appendChild(btnBack);
+        // Table row for buttons.
+        let tr = document.createElement("tr");
+        let tdSave = document.createElement("td");
+        let tdBack = document.createElement("td");
+
+        tdSave.appendChild(btnSave);
+        tdBack.appendChild(btnBack);
+
+        tr.appendChild(tdSave);
+        tr.appendChild(tdBack);
+
+        table.appendChild(tr);
+
+        this.formContainer.appendChild(table);
     }
 
     getValues(): any {
