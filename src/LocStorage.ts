@@ -3,12 +3,15 @@ import { DataStorage } from "./DataStorage"
 export class LocStorage implements DataStorage {
     saveDocument(values: any): string {
         let timestamp: string = Date.now().toString();
-        let jsonString: string = JSON.stringify(values);
+        let key = "document-" + timestamp;
 
-        localStorage.setItem(timestamp, jsonString);
+        // Add ID to the document.
+        values["Document ID:"] = timestamp;
+
+        let jsonString: string = JSON.stringify(values);
+        localStorage.setItem(key, jsonString);
 
         return timestamp;
-        // throw new Error("Method not implemented.");
     }
 
     /**
@@ -32,9 +35,15 @@ export class LocStorage implements DataStorage {
     getDocuments(): string[] {
         let documentIDs: string[] = new Array();
 
-        for (let i = 0; i < localStorage.length; i++)
-            documentIDs.push(localStorage.key(i));
-
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+        
+            // Push only keys that starts with "document".
+            if (key.startsWith("document")) {
+                documentIDs.push(localStorage.key(i));
+            }                                                        
+        }
+        
         return documentIDs;
     }
 }   

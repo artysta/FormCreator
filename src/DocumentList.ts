@@ -16,10 +16,6 @@ export class DocumentList {
 
         documentJSONs.forEach(documentID => {
             let currentDoc: any = storage.loadDocument(documentID);
-            
-            // Add documentID to current document JSON.
-            currentDoc["Document ID:"] = documentID;
-            
             this.documents.push(currentDoc);
         });
     }
