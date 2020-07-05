@@ -1,5 +1,5 @@
 # FormCreator
-Aplikacja wykonana na potrzeby przedmiotu **Programowanie aplikacji webowych (WSEI Kraków)**.
+Aplikacja wykonana na potrzeby przedmiotu **Programowanie aplikacji webowych (WSEI Kraków)**. Aplikacja pozwala na tworzenie własnych formularzy i wypełnianie ich.
 
 By możliwe było uruchomienie aplikacji, konieczne jest zainstalowanie wymaganych modułów:
 
