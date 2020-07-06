@@ -1,19 +1,11 @@
 import './styles/styles.scss';
-import { InputField } from "./InputField";
-import { SelectField } from "./SelectField";
-import { CheckboxField } from "./CheckboxField";
-import { Field } from "./Field";
 import { Form } from "./Form";
+import { FormCreator } from "./FormCreator";
+import { Router } from "./Router";
 
-console.log("Hello - New document!");
+let creator: FormCreator = new FormCreator();
+let formID: string = Router.getParam("id");
+let form: Form = creator.newForm(formID);
+let container = document.getElementById("form-container");
 
-let inputName: InputField = new InputField("input", "Name:");
-let inputCity: InputField = new InputField("input", "City:");
-let selectLanguages: SelectField = new SelectField("select", "Favorite language:", ["Java", "Python", "C#", "TypeScript"]);
-let checkBox: CheckboxField = new CheckboxField("checkbox", "Do you like e-learning?");
-
-let array: Array<Field> = [inputName, inputCity, selectLanguages, checkBox];
-
-let form: Form = new Form("form-container", array);
-
-form.render();
+container.appendChild(form.render());
