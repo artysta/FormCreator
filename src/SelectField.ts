@@ -9,12 +9,14 @@ export class SelectField implements Field {
     lblElement: LabelField;
     lblValue: string;
     selectElement: HTMLSelectElement;
+    options: string[]
     
     constructor(name: string, lblValue: string, options: string[]){
         this.name = name;
         this.type = FieldType.Select;
         this.selectElement = <HTMLSelectElement> document.createElement('select');
         this.selectElement.name = this.name;
+        this.options = options;
 
         // Add all options to select element.
         options.forEach(o => {
