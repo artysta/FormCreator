@@ -17,14 +17,12 @@ body {
 a {
     color: $primary-link-color;
     transition: 0.5s;
-    text-decoration: none;
     border-radius: $corner-radius;
     padding: $main-padding;
 }
 
 a:hover {
     transition: $transition-time;
-    text-decoration: none;
     background-color: $primary-link-color-hover;
 }
 
