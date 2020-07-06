@@ -46,4 +46,43 @@ export class LocStorage implements DataStorage {
         
         return documentIDs;
     }
+
+    getForms(): string[] {
+        let formIDs: string[] = new Array();
+
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+        
+            // Push only keys that starts with "form".
+            if (key.startsWith("form")) {
+                formIDs.push(localStorage.key(i));
+            }                                                        
+        }
+        
+        return formIDs;
+    }
+
+    saveForm(values: any): string {
+        let timestamp: string = Date.now().toString();
+        let key = "form-" + timestamp;
+
+        // Add ID to the document.
+        values.push({id: key});
+
+        let jsonString: string = JSON.stringify(values);
+        localStorage.setItem(key, jsonString);
+
+        return timestamp;
+    }
+
+    loadForm(formID: string): object {
+        return JSON.parse(localStorage.getItem(formID));
+    }
+
+    /**
+     * @param formID  ID of document that should be removed from local storage.
+     */
+    removeForm(formID: string): void {
+        localStorage.removeItem(formID);
+    }
 }   
