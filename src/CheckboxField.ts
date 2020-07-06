@@ -24,6 +24,6 @@ export class CheckboxField implements Field {
     }
 
     getValue() {
-        return this.element.value;
+        return this.element.checked;
     }
 }
