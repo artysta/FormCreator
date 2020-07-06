@@ -27,7 +27,7 @@ export class DocumentList {
         let storage: LocStorage = new LocStorage();
         storage.removeDocument(documentID);
 
-        // Reload page after removing form.
+        // Reload page after removing document.
         window.location.reload();
     }
 
@@ -52,8 +52,6 @@ export class DocumentList {
         this.documents.forEach(currentDoc => {
             // Iterate through JSON (single document) data.
             for (let key in currentDoc) {
-                console.log(key + " " + currentDoc[key]);
-
                 let tr = document.createElement("tr");
                 let tdKey = document.createElement("td");
                 let tdValue = document.createElement("td");
@@ -86,9 +84,7 @@ export class DocumentList {
 
             btnRemove.innerHTML = ("Remove this document");
 
-            btnRemove.addEventListener("click", event => {
-                this.removeDocument(currentDoc["Document ID:"]);
-            });
+            btnRemove.addEventListener("click", event => this.removeDocument("document-" + currentDoc["Document ID:"]));
 
             tdRemove.appendChild(btnRemove);
             tr.appendChild(tdRemove);
