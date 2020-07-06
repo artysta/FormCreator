@@ -4,13 +4,15 @@ import { LocStorage } from './LocStorage';
 export class Form {
     fields: Field[];
     formContainer: HTMLElement;
+    formID: string;
 
     /**
-     * @param containerId  Id of element in which the form should be placed.
      * @param fields  The array of elements that the form should consist of.
      */
-    constructor(containerId: string, fields: Field[]) {
-        this.formContainer = document.getElementById(containerId);
+
+    constructor(formID: string, fields: Field[]) {
+        //this.formContainer = document.getElementById(containerId);
+        this.formID = formID;
         this.fields = fields;
     }
 
@@ -27,7 +29,7 @@ export class Form {
         storage.saveDocument(valuesObj);
     }
 
-    render(): void {
+    render(): HTMLElement {
         let table = document.createElement("table");
         // Table row for every label-element.
         this.fields.forEach(element => {
@@ -68,7 +70,7 @@ export class Form {
 
         table.appendChild(tr);
 
-        this.formContainer.appendChild(table);
+        return table;
     }
 
     getValues(): any {
@@ -78,6 +80,8 @@ export class Form {
         this.fields.forEach(element => {
             json[element.lblElement.getValue()] = element.getValue();
         });
+
+        json["formID"] = this.formID;
 
         return json;
     }
