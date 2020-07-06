@@ -8,21 +8,21 @@ export class EmailField implements Field {
     value: any;
     lblElement: LabelField;
     lblValue: string;
-    emailElement: HTMLInputElement;
+    element: HTMLInputElement;
     
     constructor(name: string, lblValue: string){
         this.name = name;
         this.type = FieldType.Email;
-        this.emailElement = <HTMLInputElement> document.createElement('input');
-        this.emailElement.name = this.name;
+        this.element = <HTMLInputElement> document.createElement('input');
+        this.element.name = this.name;
         this.lblElement = new LabelField("label", lblValue);
     }
     
     render(): HTMLElement {
-        return this.emailElement;
+        return this.element;
     }
 
     getValue() {
-        return this.emailElement.value;
+        return this.element.value;
     }
 }

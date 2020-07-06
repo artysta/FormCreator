@@ -8,14 +8,14 @@ export class SelectField implements Field {
     value: any;
     lblElement: LabelField;
     lblValue: string;
-    selectElement: HTMLSelectElement;
+    element: HTMLSelectElement;
     options: string[]
     
     constructor(name: string, lblValue: string, options: string[]){
         this.name = name;
         this.type = FieldType.Select;
-        this.selectElement = <HTMLSelectElement> document.createElement('select');
-        this.selectElement.name = this.name;
+        this.element = <HTMLSelectElement> document.createElement('select');
+        this.element.name = this.name;
         this.options = options;
 
         // Add all options to select element.
@@ -23,17 +23,17 @@ export class SelectField implements Field {
             const option = document.createElement('option');
             option.value = o;
             option.text = o;
-            this.selectElement.add(option);
+            this.element.add(option);
         });
 
         this.lblElement = new LabelField("label", lblValue);
     }
     
     render(): HTMLElement {
-        return this.selectElement;
+        return this.element;
     }
 
     getValue() {
-        return this.selectElement.value;
+        return this.element.value;
     }
 }

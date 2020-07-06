@@ -8,21 +8,21 @@ export class TextAreaField implements Field {
     value: any;
     lblElement: LabelField;
     lblValue: string;
-    textAreaElement: HTMLTextAreaElement;
+    element: HTMLTextAreaElement;
     
     constructor(name: string, lblValue: string){
         this.name = name;
         this.type = FieldType.Multiline;
-        this.textAreaElement = <HTMLTextAreaElement> document.createElement('textarea');
-        this.textAreaElement.name = this.name;
+        this.element = <HTMLTextAreaElement> document.createElement('textarea');
+        this.element.name = this.name;
         this.lblElement = new LabelField("label", lblValue);
     }
     
     render(): HTMLElement {
-        return this.textAreaElement;
+        return this.element;
     }
 
     getValue() {
-        return this.textAreaElement.value;
+        return this.element.value;
     }
 }
