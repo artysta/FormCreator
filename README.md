@@ -3,7 +3,7 @@ Aplikacja wykonana na potrzeby przedmiotu **Programowanie aplikacji webowych w W
 
 By możliwe było uruchomienie aplikacji, konieczne jest zainstalowanie środowiska `node.js`, które pobrać można ze strony https://nodejs.org/en/. Po zakończeniu instalacji instalujemy `npx`:
 
-`npm i -g npx` (w przypadku systemów Linux i Max OS konieczne może okazać się użycie polecenia `sudo npm i -g npx`)
+`npm i -g npx` (w przypadku systemów Linux i Mac OS konieczne może okazać się użycie polecenia `sudo npm i -g npx`)
 
 Następnie instalujemy wszystkie wymagane pakiety:
 
