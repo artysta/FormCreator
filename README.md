@@ -32,26 +32,17 @@ Aplikacja będzie działała pod adresem: http://localhost:8080/.
          <img src="/screenshots/screenshot-2.png" alt="screenshot-2.png"/>
       </td>
       <td>
-         <img src="/screenshots/screenshot-3.png" alt="screenshot-3.png"/>
+         <img src="/screenshots/screenshot-4.png" alt="screenshot-4.png"/>
       </td>
    </tr>
   <tr>
-      <td>
-         <img src="/screenshots/screenshot-4.png" alt="screenshot-4.png"/>
-      </td>
       <td>
          <img src="/screenshots/screenshot-5.png" alt="screenshot-5.png"/>
       </td>
       <td>
          <img src="/screenshots/screenshot-6.png" alt="screenshot-6.png"/>
       </td>
-   </tr>
-    <tr>
-      <td>
+     <td>
          <img src="/screenshots/screenshot-7.png" alt="screenshot-7.png"/>
       </td>
-      <td>
-         <img src="/screenshots/screenshot-8.png" alt="screenshot-8.png"/>
-      </td>
-   </tr>
 </table>
