@@ -63,3 +63,14 @@ input:focus {
     border-color: $border-focus;
     transition: $transition-time;
 }
+
+button {
+    background-color: $border-focus;
+    transition: $transition-time;
+}
+
+button:hover {
+    background-color: white;
+    transition: $transition-time;
+    color: black;
+}
