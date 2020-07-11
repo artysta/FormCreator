@@ -17,25 +17,34 @@ export class FormCreator {
         this.selectOptions = new Array();
     }
 
-    newForm(formID: string): any {
+    newForm(formID: string): Form {
         let storage: LocStorage = new LocStorage();
         let json: any = storage.loadForm(formID);
  
         for (let i = 0; i < json.length - 1; i++) {
             let type: string = json[i].name;
 
-            if (type == "input") {
-                this.fields.push(new InputField(type, json[i].lblElement.value));
-            } else if (type == "checkbox") {
-                this.fields.push(new CheckboxField(type, json[i].lblElement.value));
-            } else if (type == "textarea") {
-                this.fields.push(new TextAreaField(type, json[i].lblElement.value));
-            } else if (type == "date") {
-                this.fields.push(new DateField(type, json[i].lblElement.value));
-            } else if (type == "email") {
-                this.fields.push(new EmailField(type, json[i].lblElement.value));
-            } else if (type == "select") {
-                this.fields.push(new SelectField(type, json[i].lblElement.value, json[i].options));
+            switch (type) {
+                case "input":
+                    this.fields.push(new InputField(type, json[i].lblElement.value));
+                    break;
+                case "checkbox":
+                    this.fields.push(new CheckboxField(type, json[i].lblElement.value));
+                    break;
+                case "textarea":
+                    this.fields.push(new TextAreaField(type, json[i].lblElement.value));
+                    break;
+                case "date":
+                    this.fields.push(new DateField(type, json[i].lblElement.value));
+                    break;
+                case "email":
+                    this.fields.push(new EmailField(type, json[i].lblElement.value));
+                    break;
+                case "select":
+                    this.fields.push(new SelectField(type, json[i].lblElement.value, json[i].options));
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -114,18 +123,27 @@ export class FormCreator {
 
             let type: string = select.value;
 
-            if (type == "Input") {
-                this.fields.push(new InputField(select.value.toLowerCase(), input.value));
-            } else if (type == "Checkbox") {
-                this.fields.push(new CheckboxField(select.value.toLowerCase(), input.value));
-            } else if (type == "TextArea") {
-                this.fields.push(new TextAreaField(select.value.toLowerCase(), input.value));
-            } else if (type == "Email") {
-                this.fields.push(new EmailField(select.value.toLowerCase(), input.value));
-            } else if (type == "Date") {
-                this.fields.push(new DateField(select.value.toLowerCase(), input.value));
-            } else if (type == "Select") {
-                this.fields.push(new SelectField(select.value.toLowerCase(), input.value, this.selectOptions));
+            switch (type) {
+                case "Input":
+                    this.fields.push(new InputField(select.value.toLowerCase(), input.value));
+                    break;
+                case "Checkbox":
+                    this.fields.push(new CheckboxField(select.value.toLowerCase(), input.value));
+                    break;
+                case "TextArea":
+                    this.fields.push(new TextAreaField(select.value.toLowerCase(), input.value));
+                    break;
+                case "Email":
+                    this.fields.push(new EmailField(select.value.toLowerCase(), input.value));
+                    break;
+                case "Date":
+                    this.fields.push(new DateField(select.value.toLowerCase(), input.value));
+                    break;
+                case "Select":
+                    this.fields.push(new SelectField(select.value.toLowerCase(), input.value, this.selectOptions));
+                    break;
+                default:
+                    break;
             }
 
             tr.appendChild(tdLbl);
