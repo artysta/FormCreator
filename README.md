@@ -1,5 +1,5 @@
 # FormCreator
-Aplikacja wykonana na potrzeby przedmiotu **Programowanie aplikacji webowych w Wyższej Szkole Ekonomii i Informatyki w Krakowie**. Aplikacja pozwala na tworzenie własnych formularzy i wypełnianie ich.
+Aplikacja wykonana jako projekt zaliczeniowy z przedmiotu **Programowanie aplikacji webowych w Wyższej Szkole Ekonomii i Informatyki w Krakowie**. Aplikacja pozwala na tworzenie własnych formularzy, wypełnianie ich i usuwanie. Dane na temat formularzy i utworzonych na ich podstawie dokumentów przechowywane są w pamięci lokalnej (local storage) przeglądarki.
 
 ## #1 Instrukcja
 
