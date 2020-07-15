@@ -64,20 +64,7 @@ export class DocumentList {
                 table.appendChild(tr);
             }
 
-            // Add label and button so document can be edited 
             let tr = document.createElement("tr");
-            let tdEdit = document.createElement("td");
-            let btnEdit = document.createElement("button");
-
-            btnEdit.innerHTML = ("Edit this document");
-
-            btnEdit.addEventListener("click", event => {
-                window.location.href = "edit-document.html?id=" + currentDoc["Document ID:"];
-            });
-
-            tdEdit.appendChild(btnEdit);
-            tr.appendChild(tdEdit);
-
             // Add label and button so document can be removed. 
             let tdRemove = document.createElement("td");
             let btnRemove = document.createElement("button");
