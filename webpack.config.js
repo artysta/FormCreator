@@ -7,7 +7,6 @@ module.exports = {
     App: "./src/App.ts",
     NewDocument: "./src/NewDocument.ts",
     ListOfDocuments: "./src/ListOfDocuments.ts",
-    EditDocument: "./src/EditDocument.ts",
     NewForm: "./src/NewForm.ts",
     FormList: "./src/FormList.ts",
     ListOfForms: "./src/ListOfForms.ts"
