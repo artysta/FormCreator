@@ -1,5 +1,5 @@
-import { FieldType } from "./FieldType"
-import { LabelField } from "./LabelField";
+import { FieldType } from "../enums/FieldType"
+import { LabelField } from "../fields/LabelField";
 
 export interface Field {
     name: string;

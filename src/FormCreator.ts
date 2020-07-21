@@ -1,10 +1,10 @@
-import { Field } from "./Field";
-import { InputField } from "./InputField";
-import { CheckboxField } from "./CheckboxField";
-import { TextAreaField } from "./TextAreaField";
-import { EmailField } from "./EmailField";
-import { DateField } from "./DateField";
-import { SelectField } from "./SelectField";
+import { Field } from "./interfaces/Field";
+import { InputField } from "./fields/InputField";
+import { CheckboxField } from "./fields/CheckboxField";
+import { TextAreaField } from "./fields/TextAreaField";
+import { EmailField } from "./fields/EmailField";
+import { DateField } from "./fields/DateField";
+import { SelectField } from "./fields/SelectField";
 import { LocStorage } from "./LocStorage";
 import { Form } from "./Form";
 

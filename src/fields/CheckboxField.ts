@@ -1,8 +1,8 @@
-import { Field } from "./Field";
-import { FieldType } from "./FieldType";
+import { Field } from "../interfaces/Field";
+import { FieldType } from "../enums/FieldType";
 import { LabelField } from "./LabelField";
 
-export class EmailField implements Field {
+export class CheckboxField implements Field {
     name: string;
     type: FieldType;
     value: any;
@@ -12,8 +12,9 @@ export class EmailField implements Field {
     
     constructor(name: string, lblValue: string){
         this.name = name;
-        this.type = FieldType.Email;
+        this.type = FieldType.Checkbox;
         this.element = <HTMLInputElement> document.createElement('input');
+        this.element.type = "checkbox";
         this.element.name = this.name;
         this.lblElement = new LabelField("label", lblValue);
     }
@@ -23,6 +24,6 @@ export class EmailField implements Field {
     }
 
     getValue() {
-        return this.element.value;
+        return this.element.checked;
     }
 }

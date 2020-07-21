@@ -1,5 +1,5 @@
-import { Field } from "./Field";
-import { FieldType } from "./FieldType";
+import { Field } from "../interfaces/Field";
+import { FieldType } from "../enums/FieldType";
 import { LabelField } from "./LabelField";
 
 export class SelectField implements Field {

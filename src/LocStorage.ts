@@ -1,4 +1,4 @@
-import { DataStorage } from "./DataStorage"
+import { DataStorage } from "./interfaces/DataStorage"
 
 export class LocStorage implements DataStorage {
     saveDocument(values: any): string {

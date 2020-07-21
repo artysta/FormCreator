@@ -1,4 +1,4 @@
-import { Field } from './Field';
+import { Field } from './interfaces/Field';
 import { LocStorage } from './LocStorage';
 
 export class Form {

@@ -1,4 +1,4 @@
-import { FieldType } from "./FieldType";
+import { FieldType } from "../enums/FieldType";
 
 export class LabelField {
     name: string;
