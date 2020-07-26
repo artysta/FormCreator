@@ -1,7 +1,7 @@
 # FormCreator
 Aplikacja wykonana jako projekt zaliczeniowy z przedmiotu **Programowanie aplikacji webowych w Wyższej Szkole Ekonomii i Informatyki w Krakowie**. Aplikacja pozwala na tworzenie własnych formularzy, wypełnianie ich i usuwanie. Dane na temat formularzy i utworzonych na ich podstawie dokumentów przechowywane są w pamięci lokalnej (local storage) przeglądarki.
 
-## #1 Instrukcja
+## #1 Instrukcja 🇵🇱.
 
 By możliwe było uruchomienie aplikacji, konieczne jest zainstalowanie środowiska `node.js`, które pobrać można ze strony https://nodejs.org/en/. Po zakończeniu instalacji instalujemy `npx`:
 
@@ -21,7 +21,11 @@ Serwer uruchamiamy za pomocą:
 
 Aplikacja będzie działała pod adresem: http://localhost:8080/.
 
-## #2 Zrzuty ekranu
+## #2 Simple 🇬🇧 instruction.
+
+This app allows to create own forms and documents. If you want to run this app, you have to install `node.js`, and `npx`. Then just type `npx webpack-dev-server --content-base src` to run app on http://localhost:8080/.
+
+## #3 Zrzuty ekranu (screenshots).
 
 <table>
    <tr>
