@@ -1,4 +1,3 @@
-import './styles/styles.scss';
 import { FormCreator } from "./FormCreator";
 
 let creator = new FormCreator();

@@ -46,6 +46,10 @@ export class Form {
 
         let btnSave = document.createElement("button");
         btnSave.innerHTML = "Save this document";
+
+        btnSave.classList.add("btn");
+        btnSave.classList.add("btn-success");
+        
         btnSave.addEventListener("click", event => {
             this.save()
             window.location.href = "index.html";
@@ -53,6 +57,10 @@ export class Form {
 
         let btnBack = document.createElement("button");
         btnBack.innerHTML = "Go back";
+
+        btnBack.classList.add("btn");
+        btnBack.classList.add("btn-danger");
+
         btnBack.addEventListener("click", event => {
             window.location.href = "index.html";
         });

@@ -14,6 +14,7 @@ export class InputField implements Field {
         this.name = name;
         this.type = FieldType.Text;
         this.inputElement = <HTMLInputElement> document.createElement('input');
+        this.inputElement.classList.add("form-control");
         this.inputElement.name = this.name;
         this.lblElement = new LabelField("label", lblValue);
     }

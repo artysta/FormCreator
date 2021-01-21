@@ -63,6 +63,7 @@ export class FormCreator {
         let tdSelect = document.createElement("td");
 
         let input = document.createElement("input");
+        input.classList.add("form-control");
         input.placeholder = "Label value..." ;
 
         tdLblValue.appendChild(input);
@@ -71,6 +72,7 @@ export class FormCreator {
 
         // Create select and options.
         let select = document.createElement("select");
+        select.classList.add("form-control");
 
         let optInput = document.createElement("option");
         optInput.innerHTML = "Input";
@@ -110,6 +112,8 @@ export class FormCreator {
         let tdBtnAdd = document.createElement("td");
         let btnAdd = document.createElement("button");
         btnAdd.innerHTML = "Add";
+        btnAdd.classList.add("btn");
+        btnAdd.classList.add("btn-primary");
         
         btnAdd.addEventListener("click", event => {
             this.selectOptions = inputValues.value.split(",");
@@ -157,7 +161,10 @@ export class FormCreator {
         let tdBtnSave = document.createElement("td");
         let btnSave = document.createElement("button");
 
-        btnSave.innerHTML = "Save";
+        btnSave.classList.add("btn");
+        btnSave.classList.add("btn-primary");
+
+        btnSave.innerHTML = "Save form";
         btnSave.addEventListener("click", event => {
             this.saveForm();
             alert("Form saved!");
@@ -167,7 +174,9 @@ export class FormCreator {
 
         let inputValues = document.createElement("input");
         let tdSelectValues = document.createElement("td");
+
         inputValues.placeholder = "Option 1, option 2...";
+        inputValues.classList.add("form-control");
         tdSelectValues.style.display = "none";
         tdSelectValues.appendChild(inputValues);
 

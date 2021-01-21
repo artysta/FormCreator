@@ -14,6 +14,7 @@ export class TextAreaField implements Field {
         this.name = name;
         this.type = FieldType.Multiline;
         this.element = <HTMLTextAreaElement> document.createElement('textarea');
+        this.element.classList.add("form-control");
         this.element.name = this.name;
         this.lblElement = new LabelField("label", lblValue);
     }

@@ -14,6 +14,7 @@ export class EmailField implements Field {
         this.name = name;
         this.type = FieldType.Email;
         this.element = <HTMLInputElement> document.createElement('input');
+        this.element.classList.add("form-control");
         this.element.name = this.name;
         this.lblElement = new LabelField("label", lblValue);
     }

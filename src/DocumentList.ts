@@ -50,6 +50,16 @@ export class DocumentList {
 
         // Iterate through all documents.
         this.documents.forEach(currentDoc => {
+            let div = document.createElement("div");
+            div.classList.add("card");
+            div.classList.add("m-2");
+
+            let divHeader = document.createElement("div");
+            divHeader.classList.add("card-header");
+            divHeader.innerHTML = "Document"
+            
+            div.appendChild(divHeader);
+
             // Iterate through JSON (single document) data.
             for (let key in currentDoc) {
                 let tr = document.createElement("tr");
@@ -61,7 +71,7 @@ export class DocumentList {
 
                 tr.appendChild(tdKey);
                 tr.appendChild(tdValue);
-                table.appendChild(tr);
+                div.append(tr);
             }
 
             let tr = document.createElement("tr");
@@ -70,12 +80,16 @@ export class DocumentList {
             let btnRemove = document.createElement("button");
 
             btnRemove.innerHTML = ("Remove this document");
+            btnRemove.classList.add("btn");
+            btnRemove.classList.add("btn-danger");
 
             btnRemove.addEventListener("click", event => this.removeDocument("document-" + currentDoc["Document ID:"]));
 
             tdRemove.appendChild(btnRemove);
             tr.appendChild(tdRemove);
-            table.appendChild(tr);
+
+            div.appendChild(tr)
+            table.appendChild(div);
         });
 
         return table;

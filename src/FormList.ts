@@ -50,6 +50,18 @@ export class FormList {
 
         // Iterate through all forms.
         this.forms.forEach(currentForm => {
+            let div = document.createElement("div");
+            div.classList.add("card");
+            div.classList.add("m-2");
+            
+            let divHeader = document.createElement("div");
+            divHeader.classList.add("card-header");
+
+            let currentFormId = currentForm[currentForm.length - 1].id;
+            divHeader.innerHTML = "Form ID:  " + currentFormId;
+
+            div.appendChild(divHeader);
+
             // Iterate through JSON (single document) data.
             for (let i = 0; i < currentForm.length - 1; i++) {
                 let tr = document.createElement("tr");
@@ -61,19 +73,15 @@ export class FormList {
 
                 tr.appendChild(tdKey);
                 tr.appendChild(tdValue);
-                table.appendChild(tr);
+                div.appendChild(tr);
             }
-
             let tr = document.createElement("tr");
-            let tdId = document.createElement("td");
             let tdFill = document.createElement("td");
             let btnFill = document.createElement("button");
 
-            let currentFormId = currentForm[currentForm.length - 1].id;
-
-            tdId.innerHTML = "ID: " + currentFormId;
-
             btnFill.innerHTML = ("Fill this form");
+            btnFill.classList.add("btn");
+            btnFill.classList.add("btn-success");
 
             btnFill.addEventListener("click", event => {
                 window.location.href = " new-document.html?id=" + currentFormId;
@@ -83,6 +91,8 @@ export class FormList {
             let btnRemove = document.createElement("button");
 
             btnRemove.innerHTML = ("Remove this form");
+            btnRemove.classList.add("btn");
+            btnRemove.classList.add("btn-danger");
 
             btnRemove.addEventListener("click", event => {
                 this.removeForm(currentFormId);
@@ -91,11 +101,12 @@ export class FormList {
             tdRemove.appendChild(btnRemove);
             tdFill.appendChild(btnFill);
 
-            tr.appendChild(tdId);
             tr.appendChild(tdFill);
             tr.appendChild(tdRemove);
 
-            table.appendChild(tr);
+            div.appendChild(tr);
+
+            table.appendChild(div);
         });
 
         return table;

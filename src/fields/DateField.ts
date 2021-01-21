@@ -14,6 +14,7 @@ export class DateField implements Field {
         this.name = name;
         this.type = FieldType.Date;
         this.dateElement = <HTMLInputElement> document.createElement('input');
+        this.dateElement.classList.add("form-control");
         this.dateElement.name = this.name;
         this.lblElement = new LabelField("label", lblValue);
     }

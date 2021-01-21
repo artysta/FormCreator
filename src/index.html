@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <title>Index | FormCreator</title>
-  </head>
-  <body>
-    <h3>Menu</h3>
-    <ul>
-      <li><a href="./document-list.html">List of documents</a></li>
-      <li><a href="./new-form.html">Create new form</a></li>
-      <li><a href="./form-list.html">List of forms</a></li>
-    </ul>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand">Form Creator</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link text-light">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Form Creator Menu</h2>
+        <div class="list-group">
+            <a href="./document-list.html" class="list-group-item list-group-item-action">1. List of documents</a>
+            <a href="./new-form.html" class="list-group-item list-group-item-action">2. Create new form</a>
+            <a href="./form-list.html" class="list-group-item list-group-item-action">3. List of forms</a>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom border-top footer text-muted bg-dark">
+        <div class="container text-light">
+            &copy; 2021 - Form Creator - Adrian Kurek
+        </div>
+    </footer>
+
     <script src="App.js"></script>
-  </body>
+</body>
+
 </html>

@@ -15,6 +15,7 @@ export class SelectField implements Field {
         this.name = name;
         this.type = FieldType.Select;
         this.element = <HTMLSelectElement> document.createElement('select');
+        this.element.classList.add("form-control");
         this.element.name = this.name;
         this.options = options;
 

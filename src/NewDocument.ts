@@ -1,4 +1,3 @@
-import './styles/styles.scss';
 import { Form } from "./Form";
 import { FormCreator } from "./FormCreator";
 import { Router } from "./Router";

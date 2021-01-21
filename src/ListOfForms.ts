@@ -1,4 +1,3 @@
-import './styles/styles.scss';
 import { FormList } from "./FormList";
 
 let formList: FormList = new FormList();
